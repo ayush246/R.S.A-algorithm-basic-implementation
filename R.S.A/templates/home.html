@@ -1,0 +1,99 @@
+<style>
+    #ip1 
+    {
+      position: absolute;
+      z-index: 1;
+      display: block;
+      height: 5rem;
+      width: 27rem;
+      background: transparent linear-gradient(to top left, rgba(249,208,129,.2) 0%, rgba(227,2,62,.2) 40%, rgba(49,128,135,.2) 100%);
+      border:solid transparent;
+      border-image-source: linear-gradient(to top left, rgba(249,208,129,1) 0%, rgba(227,2,62,1) 40%, rgba(49,128,135,1) 100%);
+      border-image-slice: 1;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: whitesmoke;
+      margin-left: 70px;
+    }
+    .tx{
+    outline:none;
+    border-top:transparent;
+    border-left:transparent;
+    border-right:transparent;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px; 
+    background: transparent;
+    color:whitesmoke; 
+    width: 420px;
+    margin-left: 70px;
+    }
+    .card 
+    {
+      display: flex;
+      border-radius: 10px;
+      height: 100%;
+      width: 83%;
+      background: url("https://cdn.pixelprivacy.com/wp-content/uploads/2018/06/Data-Encryption-Icon-1024x806.png");
+      transition: 0.4s ease-out;
+      position: relative;
+      box-shadow: 0 1rem 1rem;
+      background-position: right; /* Center the image */
+      background-repeat: no-repeat; /* Do not repeat the image */
+      background-size: 50% 100%;/* Resize the background image to cover the entire container */
+      background-color: #17141d;
+      border: none;
+      justify-content: left;
+    }
+    .bar {
+    position: absolute;
+    top: 100px;
+    height: 5px;
+
+  }
+  .filledbar {
+    margin-left: 70px;
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    height: 100%;
+    width: 420px;
+    background: rgb(0,154,217);
+    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+    transition: 0.6s ease-out;
+  }
+</style>
+
+<div align=center>
+  <div class="card">
+    <form action="{% url 'encrypt' %}">
+      <br />
+      <h1><font face="Roboto" color="whitesmoke">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encrypter & Decrypter</font></h1>
+      <div class="bar"><div class="filledbar"></div></div>
+      <br /> 
+      <br />
+      <br /> 
+      <br />
+      <textarea class="tx" cols="50" rows="2" name="key" placeholder="enter two prime numbers to be used as keys"></textarea>
+      <br /> 
+      <br />
+      <br />
+      <br />
+      <br /> 
+      <br />
+      <br />
+      <textarea class="tx" cols="50" rows="20" name="original" placeholder="enter text you want to encrypt"></textarea>
+      <br /> 
+      <br />
+      <br />
+      <br /> 
+      <br />
+      <br />
+      <input type="submit" value="Encrypt data using R.S.A Algorithm" id="ip1">
+    </form>
+  </div>
+</div>

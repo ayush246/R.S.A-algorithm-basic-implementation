@@ -1,0 +1,85 @@
+<style>
+    .card 
+    {
+        display: flex;
+        border-radius: 10px;
+        width: 400px;
+        height: 500px;
+        transition: 0.4s ease-out;
+        position: relative;
+        background-color: #17141d;
+        border: none;
+        justify-content: center;
+    }
+    .container {
+  position: absolute;
+  top: 80px;
+  left: calc(28% - 300px);
+  display: flex;
+}
+.bar {
+    position: absolute;
+    top: 100px;
+    height: 5px;
+
+  }
+  .filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    height: 100%;
+    width: 560px;
+    background: rgb(0,154,217);
+    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+    transition: 0.6s ease-out;
+  }
+</style>
+
+<div class="container">
+<div align="center" class="card">
+    <h1><br /><font face="Roboto" color="whitesmoke">Encrypted message is :</font>
+        <br /><br /><font size="5" face="Roboto" color="whitesmoke">{{em}}</font>
+        <br /><br /> <font size="5" face="Roboto" color="whitesmoke">Algorithm used for encryption :</font>
+            <br /><br /><font size="4" face="Roboto" color="whitesmoke">
+                Sender A does the following:-
+                <br />
+                1 -> Obtains the recipient B's public key (n,e).
+                <br />
+                2 -> Represents the plaintext message as a positive integer m with 1< m< n 
+                <br />
+                3 -> Computes the ciphertext c=(m^e)mod(n).
+                <br />
+                4 -> Sends the ciphertext c to B
+        </font>
+    </h1>
+</div>
+<div align="left" class="card">
+        <h1><br /><font size="6" face="Roboto" color="whitesmoke">Algorithm for key genration</font>
+            <br /> <br /><font size="4" face="Roboto" color="whitesmoke">
+                    1 -> Generate two large random primes, p and q, of approximately equal size such that their product n=pq is of the required bit length, e.g. 1024 bits
+                    <br />
+                    2 -> Compute n=pq and ϕ=(p−1)(q−1)
+                    <br />
+                    3 -> Choose an integer e, 1< e< ϕ, such that gcd(e,ϕ)=1
+                    <br />
+                    4 -> Compute the secret exponent d, 1< d< ϕ, such that ed≡1modϕ
+                    <br />
+                    5 -> The public key is (n,e) and the private key (d,p,q)
+            </font></h1>
+</div>
+<div align="left" class="card">
+        <h1><br /><font size="6" face="Roboto" color="whitesmoke">&nbsp;&nbsp;Algorithm for decryption</font>
+            <br /> <br /><font size="4" face="Roboto" color="whitesmoke">
+                    Recipient B does the following:-
+                    <br />
+                    1 -> Uses his private key (n,d) to compute m=(c^d)mod(n).
+                    <br />
+                    2 -> Extracts the plaintext from the message representative m. 
+                    <br />
+                    <br />
+                    <font size="6" face="Roboto" color="whitesmoke">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Decrypted Message</font>
+                    <p>{{decrypted}}</p>
+            </font>
+        </h1>
+        
+</div>
